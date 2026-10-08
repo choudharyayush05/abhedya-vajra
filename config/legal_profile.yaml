@@ -1,0 +1,27 @@
+# Legal framework and notice templates configuration
+# Supports Bharatiya Nagarik Suraksha Sanhita (BNSS, 2023) and Code of Criminal Procedure (CrPC, 1973)
+
+legal_profiles:
+  bnss_2023:
+    act_name: "Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS)"
+    freeze_section: "Section 106 & Section 94 of BNSS, 2023"
+    summons_section: "Section 94 of BNSS, 2023"
+    evidence_act: "Bharatiya Sakshya Adhiniyam, 2023 (BSA)"
+    electronic_evidence_section: "Section 63 of BSA, 2023"
+    issuing_authority: "Indore Police Commissionerate, Madhya Pradesh"
+    station_name: "State Cyber Crime Police Station / Cyber Crime Branch, Indore"
+    default_io_name: "Cyber Crime Investigating Officer"
+    default_io_designation: "Inspector of Police"
+    retention_instructions: "Place an immediate debit lien / freeze strictly limited to the tainted amount specified in Annexure-A. Preserve complete KYC, IP logs, MAC address, and device logs."
+
+  crpc_1973:
+    act_name: "Code of Criminal Procedure, 1973 (CrPC)"
+    freeze_section: "Section 102 of CrPC, 1973"
+    summons_section: "Section 91 of CrPC, 1973"
+    evidence_act: "Indian Evidence Act, 1872"
+    electronic_evidence_section: "Section 65B of Indian Evidence Act, 1872"
+    issuing_authority: "Indore Police Commissionerate, Madhya Pradesh"
+    station_name: "State Cyber Crime Police Station / Cyber Crime Branch, Indore"
+    default_io_name: "Cyber Crime Investigating Officer"
+    default_io_designation: "Inspector of Police"
+    retention_instructions: "Place an immediate debit lien / freeze strictly limited to the tainted amount specified in Annexure-A. Preserve complete KYC, IP logs, MAC address, and device logs."

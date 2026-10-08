@@ -1,0 +1,2 @@
+# Reference: Git LFS Pointer (sha256:1e1912e546b3290d0445c02cba6dc2abb37c1561e284bfe1ab359a899a277937)
+txn_id,src_account,dst_account,src_ifsc,dst_ifsc,amount,timestamp,payment_mode,narration,ip_address,device_type

@@ -1,0 +1,91 @@
+# Operation Vajra - Mule Risk Engine Configuration
+version: "1.0.0"
+project: "Vajra (वज्र)"
+seed: 42
+
+# 1. Authoritative Rule Component Weights (Sum = 100)
+weights:
+  velocity: 30.0           # Pass-through speed & drain ratio
+  fan_topology: 25.0       # Fan-in / Fan-out rapid disbursement
+  cash_out: 20.0           # Foreign IP, headless device, crypto/wallet drainage
+  device_ip: 10.0          # Shared IP & device fingerprints
+  chain_coherence: 10.0    # Time-respecting money flow continuity
+  narration: 5.0           # High-risk narration keywords (crypto, p2p, instant)
+
+# Maximum negative adjustments (reductions for legitimate profiles)
+negative_max: 25.0
+
+# 2. Smooth Ramping Bounds (linear scaling, no sharp cliffs)
+ramp_bounds:
+  ptr_ramp_min: 0.70       # 0 points below 70% PTR
+  ptr_ramp_max: 0.95       # Max velocity points at >= 95% PTR
+  hold_fast_sec: 900       # 15 minutes (max points for <= 15m hold)
+  hold_slow_sec: 86400     # 24 hours (0 velocity points for >= 24h hold)
+  fanout_range: [3, 7]     # Typical suspect fan-out band
+  burst_fano_thresh: 2.5   # Fano factor threshold for burstiness
+  night_share_thresh: 0.30 # Off-hours 00:00-06:00 activity share
+
+# 3. Temporal Rolling Windows (in seconds)
+windows:
+  w_5m: 300
+  w_15m: 900
+  w_1h: 3600
+  w_6h: 21600
+  w_24h: 86400
+
+# 4. LightGBM Bounded Machine Learning Specs
+ml:
+  enabled: true
+  max_points: 20.0         # ml_points range: [-20.0, +20.0]
+  gate_min_rule: 10.0      # If rule_score < 10, ml_points = min(ml_points, 0)
+  learning_rate: 0.05
+  num_leaves: 31
+  min_child_samples: 20
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  bagging_freq: 1
+  lambda_l2: 1.0
+  early_stopping_rounds: 50
+  seed: 42
+  deterministic: true
+
+# 5. Ring Points & Topology Second-Pass Specs
+ring:
+  max_points: 8.0          # ring_points range: [0.0, 8.0]
+  min_rule: 25.0           # Only accounts with 25 <= rule_score < 65 eligible
+  max_rule: 65.0
+  anchor_risk: 85.0        # Anchor suspect risk threshold
+  max_hops: 3              # Maximum graph traversal distance
+  max_wait_hours: 72       # Time-respecting causality window
+
+# 6. Pseudo-Labelling Criteria for Confident Hits
+pseudo_labels:
+  pos_min_rule: 75.0       # Minimum rule score for positive pseudo-label
+  pos_min_families: 3      # Must have >= 3 distinct rule families fired
+  pos_min_ptr_15m: 0.90    # High velocity 15-minute pass-through
+  pos_max_pct: 0.03        # Maximum 3% of total accounts as positive seeds
+  neg_max_rule: 15.0       # Negative pseudo-label max rule score
+  neg_percentile: 70.0     # Negative seeds selected from bottom 70%
+  min_positives: 50        # Minimum positive count to enable ML training
+  min_negatives: 200       # Minimum negative count to enable ML training
+
+# 7. Decision Threshold & Tiers
+flag_threshold: "auto"     # "auto" (calibrated in [55, 80] via mixture/elbow) or numeric
+tiers:
+  low: [0.0, 19.9]
+  medium: [20.0, 39.9]
+  high: [40.0, 74.9]
+  critical: [75.0, 100.0]
+
+# 8. Automatic Fallback Gate Constraints
+fallback_limits:
+  flagged_share_min: 0.01  # Minimum 1% of accounts flagged
+  flagged_share_max: 0.15  # Maximum 15% of accounts flagged
+  coherence_delta_max: 0.05  # Max allowable drop in chain coherence vs rules-only
+  psi_threshold: 0.25      # Population Stability Index alert threshold
+  psi_feature_max_pct: 0.30  # Max percentage of features allowed with PSI > 0.25
+
+# 9. Optional Unsupervised Isolation Forest (Default OFF, never alters risk_index)
+iforest:
+  enabled: false
+  contamination: 0.02

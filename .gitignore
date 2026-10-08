@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Node / Frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+frontend/node_modules/
+.oxlintrc.json
+
+# Local databases and large runtime caches
+data/duckdb/
+data/cache/
+data/parquet/
+*.parquet
+*.duckdb*
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Logs and outputs
+*.log
+outputs/*.zip

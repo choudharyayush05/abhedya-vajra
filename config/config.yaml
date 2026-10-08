@@ -1,0 +1,78 @@
+# Vajra Configuration
+# All thresholds, weights, and detection parameters
+
+app:
+  name: "Vajra"
+  version: "1.0.0"
+  debug: false
+  host: "127.0.0.1"
+  port: 8000
+  data_dir: "data"
+  outputs_dir: "outputs"
+
+ingest:
+  engine: "duckdb" # duckdb | polars
+  batch_size: 500000
+  chunk_rows: 250000
+  threads: 8
+  memory_limit: "4GB"
+  parquet_cache: true
+  quarantine_bad_rows: true
+
+detection:
+  rules:
+    weights:
+      velocity_passthrough: 30
+      fan_topology: 25
+      cashout_signals: 20
+      device_ip_anomaly: 10
+      chain_coherence: 10
+      narration_markers: 5
+    penalties:
+      salary_like: -15
+      merchant_like: -15
+      long_hold_time: -10
+    thresholds:
+      ptr_15m_critical: 0.90
+      ptr_1h_high: 0.85
+      ptr_6h_medium: 0.75
+      min_hold_seconds: 180   # 3 mins
+      max_hold_seconds: 900   # 15 mins
+      l1_min_distinct_senders: 5
+      l2_fanout_min: 3
+      l2_fanout_max: 7
+      l2_retention_max: 0.15 # keeps <= 15%
+  
+  scoring:
+    default_flag_threshold: 65
+    auto_calibrate: true
+    w_ml: 0.35 # rule 65%, ML 35%
+    tiers:
+      critical: 85
+      high: 65
+      medium: 40
+      low: 0
+
+trace:
+  default_max_hops: 4
+  max_wait_hours: 72
+  frontier_cap: 3000
+  min_amount_fraction: 0.005 # prune transfers < 0.5% of victim loss
+  taint_mode: "fifo" # fifo | proportional
+
+clustering:
+  min_syndicate_size: 3
+  shared_ip_weight: 0.4
+  shared_device_weight: 0.3
+  temporal_burst_weight: 0.3
+  similarity_threshold: 0.65
+
+llm:
+  enabled: false # local LLM can be toggled; templates always active
+  model_path: "ml/models/qwen2.5-7b-instruct-q4_k_m.gguf"
+  max_tokens: 1024
+  temperature: 0.1
+
+ui:
+  mask_accounts: false
+  default_language: "en"

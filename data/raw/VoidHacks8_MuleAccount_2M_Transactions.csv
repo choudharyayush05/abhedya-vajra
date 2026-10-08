@@ -1,0 +1,2 @@
+# Reference: Git LFS Pointer (sha256:2c9f81fd34f728c0b7c1e803cb49e1e231c1d9204a77badfcb737f50adf73101, size: 286788986 bytes)
+txn_id,src_account,dst_account,src_ifsc,dst_ifsc,amount,timestamp,payment_mode,narration,ip_address,device_type

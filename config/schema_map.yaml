@@ -1,0 +1,76 @@
+# Column header mapping with fuzzy aliases
+# Ensures robust loading even if input CSV headers differ slightly
+
+canonical_columns:
+  txn_id:
+    - "Transaction_ID"
+    - "transaction_id"
+    - "txn_id"
+    - "TXN_ID"
+    - "Reference_Number"
+  src_account:
+    - "Sender_Account"
+    - "sender_account"
+    - "Source_Account"
+    - "source_account"
+    - "src_account"
+    - "from_account"
+    - "remitter_account"
+    - "Debit_Account"
+  dst_account:
+    - "Receiver_Account"
+    - "receiver_account"
+    - "Destination_Account"
+    - "destination_account"
+    - "dst_account"
+    - "to_account"
+    - "beneficiary_account"
+    - "Credit_Account"
+  src_ifsc:
+    - "Sender_IFSC"
+    - "sender_ifsc"
+    - "Source_IFSC"
+    - "source_ifsc"
+    - "src_ifsc"
+    - "remitter_ifsc"
+  dst_ifsc:
+    - "Receiver_IFSC"
+    - "receiver_ifsc"
+    - "Destination_IFSC"
+    - "destination_ifsc"
+    - "dst_ifsc"
+    - "beneficiary_ifsc"
+  amount:
+    - "Amount"
+    - "amount"
+    - "txn_amount"
+    - "Txn_Amount"
+    - "Amount_INR"
+  timestamp:
+    - "Timestamp"
+    - "timestamp"
+    - "txn_timestamp"
+    - "date_time"
+    - "DateTime"
+  payment_mode:
+    - "Payment_Mode"
+    - "payment_mode"
+    - "mode"
+    - "channel"
+    - "Payment_Rail"
+  narration:
+    - "Narration"
+    - "narration"
+    - "remarks"
+    - "description"
+    - "Description"
+  ip_address:
+    - "IP_Address"
+    - "ip_address"
+    - "ip"
+    - "client_ip"
+  device_type:
+    - "Device_Type"
+    - "device_type"
+    - "device"
+    - "user_agent_type"

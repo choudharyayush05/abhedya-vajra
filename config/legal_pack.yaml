@@ -1,0 +1,185 @@
+# ==============================================================================
+# OPERATION VAJRA — STATUTORY LEGAL PACK
+# Offline, Versioned, Code-Selected Clauses & Allowed Legal Citations
+# ==============================================================================
+# CRITICAL NOTICE:
+# Local LLMs / Ollama must act as the WRITER, NOT THE SOURCE OF LAW.
+# Legal section numbers and statutory mandates must exclusively originate from
+# this human-reviewed file. The legal-citation checker rejects any citation
+# outside the selected profile's 'allowed_citations'.
+# ==============================================================================
+
+pack_version: "2026-10-02.1"
+valid_as_of: "2026-10-02"
+reviewed_by: "Indore Commissionerate Legal Cell (Advisory Draft)" # Legal cell officer sign-off
+
+# ------------------------------------------------------------------------------
+# PROFILES (Switchable by Commissionerate Legal Policy)
+# ------------------------------------------------------------------------------
+profiles:
+  indore_default:
+    id: "indore_default"
+    name: "Indore / MP High Court Default (Archana v State of MP, 2026)"
+    title: "Notice under Section 94 BNSS (erstwhile Sec. 91 CrPC) for production of documents and request to mark lien on disputed amount"
+    primary_act: "Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS)"
+    clauses:
+      - "DOC_PRODUCTION"
+      - "LIEN_DISPUTED_ONLY"
+      - "MAGISTRATE_INTIMATION"
+      - "CUSTOMER_INTIMATION"
+      - "GRIEVANCE_REVIEW"
+      - "PRESERVATION_KYC"
+      - "ELECTRONIC_EVIDENCE_CERT"
+    allowed_citations:
+      - "94 BNSS"
+      - "106 BNSS"
+      - "107 BNSS"
+      - "192 BNSS"
+      - "63 BSA"
+      - "91 CRPC"
+      - "102 CRPC"
+      - "172 CRPC"
+      - "65B IEA"
+    review_days: 15
+    max_days: 90
+    description: "Enforces Archana v State of MP (WP-29117-2026, July 2026): restricts action to amount-limited lien on traced proceeds, mandates Magistrate intimation, customer notification, and 15/90 day grievance timelines per MHA 10-April-2026 SOP."
+
+  bombay_strict_107:
+    id: "bombay_strict_107"
+    name: "Bombay High Court Strict Profile (Section 107 BNSS Attachment)"
+    title: "Notice under Section 94 BNSS with Section 107 BNSS Attachment Application Reference"
+    primary_act: "Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS)"
+    clauses:
+      - "DOC_PRODUCTION"
+      - "LIEN_DISPUTED_ONLY"
+      - "SEC_107_MAGISTRATE_APPLICATION"
+      - "CUSTOMER_INTIMATION"
+      - "GRIEVANCE_REVIEW"
+      - "PRESERVATION_KYC"
+      - "ELECTRONIC_EVIDENCE_CERT"
+    allowed_citations:
+      - "94 BNSS"
+      - "107 BNSS"
+      - "192 BNSS"
+      - "63 BSA"
+      - "91 CRPC"
+      - "172 CRPC"
+      - "65B IEA"
+    review_days: 15
+    max_days: 90
+    description: "Complies with Bombay HC ruling holding investigating agencies cannot debit-freeze under Sec 106; requests bank lien and initiates formal application to Magistrate under Sec 107."
+
+  delhi_magistrate_attachment:
+    id: "delhi_magistrate_attachment"
+    name: "Delhi High Court Seizure & Judicial Attachment Profile"
+    title: "Requisition under Section 94 & 106 BNSS (Evidence Seizure) with Sec 107 Judicial Confirmation"
+    primary_act: "Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS)"
+    clauses:
+      - "DOC_PRODUCTION"
+      - "LIEN_DISPUTED_ONLY"
+      - "MAGISTRATE_APPROVAL_SUBMISSION"
+      - "CUSTOMER_INTIMATION"
+      - "GRIEVANCE_REVIEW"
+      - "PRESERVATION_KYC"
+      - "ELECTRONIC_EVIDENCE_CERT"
+    allowed_citations:
+      - "94 BNSS"
+      - "106 BNSS"
+      - "107 BNSS"
+      - "192 BNSS"
+      - "63 BSA"
+      - "91 CRPC"
+      - "102 CRPC"
+      - "172 CRPC"
+      - "65B IEA"
+    review_days: 15
+    max_days: 90
+    description: "Follows Delhi HC precedent: Section 106 used solely for evidentiary preservation, with formal attachment submitted for judicial confirmation under Section 107."
+
+  permissive_106:
+    id: "permissive_106"
+    name: "Allahabad / Permissive Police Seizure Profile (Section 106 BNSS)"
+    title: "Statutory Seizure & Debit Freeze Requisition under Section 94 & Section 106 BNSS"
+    primary_act: "Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS)"
+    clauses:
+      - "DOC_PRODUCTION"
+      - "LIEN_DISPUTED_ONLY"
+      - "IMMEDIATE_DEBIT_FREEZE_106"
+      - "MAGISTRATE_INTIMATION"
+      - "PRESERVATION_KYC"
+      - "ELECTRONIC_EVIDENCE_CERT"
+    allowed_citations:
+      - "94 BNSS"
+      - "106 BNSS"
+      - "192 BNSS"
+      - "63 BSA"
+      - "91 CRPC"
+      - "102 CRPC"
+      - "172 CRPC"
+      - "65B IEA"
+    review_days: 15
+    max_days: 90
+    description: "Permissive police seizure strictly bounded to suspicious amount under Sec 106 with mandatory prompt intimation to the jurisdictional Magistrate."
+
+# ------------------------------------------------------------------------------
+# STATUTORY CLAUSES (Human Reviewed & Legally Locked)
+# ------------------------------------------------------------------------------
+clauses:
+  DOC_PRODUCTION:
+    id: "DOC_PRODUCTION"
+    en: "Under Section 94 BNSS (erstwhile Section 91 CrPC), you are hereby required to immediately furnish: (a) complete certified account statement from inception to date, (b) certified KYC dossier, account opening form, registered mobile numbers, email addresses, and (c) all linked IP login logs, device identifiers, and MAC addresses for the accounts tabulated in Annexure-A."
+    hi: "भारतीय नागरिक सुरक्षा संहिता (BNSS), 2023 की धारा 94 (पूर्ववर्ती धारा 91 CrPC) के अंतर्गत, आपको अनुलग्नक-क (Annexure-A) में उल्लेखित खातों के संबंध में निम्नलिखित विवरण तत्काल उपलब्ध कराने का निर्देश दिया जाता है: (क) खाता खोलने की तिथि से अद्यतन प्रमाणित बैंक विवरण (स्टेटमेंट), (ख) प्रमाणित केवाईसी (KYC) दस्तावेज, खाता खोलने का फॉर्म, पंजीकृत मोबाइल नंबर एवं ईमेल, तथा (ग) इंटरनेट बैंकिंग आईपी (IP) लॉगिन विवरण, डिवाइस पहचानकर्ता एवं मैक (MAC) एड्रेस।"
+
+  LIEN_DISPUTED_ONLY:
+    id: "LIEN_DISPUTED_ONLY"
+    en: "Mark debit lien strictly limited to {AMT} traced to the listed fraudulent transactions. In compliance with High Court guidelines, do not debit-freeze the remaining balance or disrupt legitimate account operations unless explicitly directed in writing by a competent judicial authority."
+    hi: "उच्च न्यायालय के दिशा-निर्देशों के अनुपालन में, केवल संदिग्ध लेनदेन से जुड़ी राशि ₹{AMT} पर तत्काल डेबिट लीन (Lien/Hold) अंकित करें। उक्त विवादित राशि के अतिरिक्त शेष राशि को डेबिट-फ्रीज न किया जाए तथा वैध परिचालन को तब तक बाधित न किया जाए जब तक कि सक्षम न्यायिक प्राधिकारी द्वारा लिखित आदेश न दिया जाए।"
+
+  MAGISTRATE_INTIMATION:
+    id: "MAGISTRATE_INTIMATION"
+    en: "In accordance with statutory mandates, intimation of this lien requisition has been forwarded forthwith to the learned Jurisdictional Judicial Magistrate having jurisdiction over this cyber crime investigation."
+    hi: "वैधानिक प्रावधानों के अनुसार, इस लीन/होल्ड मांग की सूचना इस साइबर अपराध अन्वेषण के क्षेत्राधिकार वाले विद्वान न्यायिक मजिस्ट्रेट को तत्काल प्रेषित कर दी गई है।"
+
+  CUSTOMER_INTIMATION:
+    id: "CUSTOMER_INTIMATION"
+    en: "The bank shall immediately notify the account holder regarding this lien, providing the Cyber Crime Complaint Reference {CASE_REF} and advising them of the statutory grievance redressal channel."
+    hi: "बैंक संबंधित खाताधारक को इस लीन/होल्ड के बारे में तत्काल सूचित करेगा, जिसमें साइबर अपराध संदर्भ संख्या {CASE_REF} का स्पष्ट उल्लेख होगा तथा खाताधारक को वैधानिक शिकायत निवारण प्रक्रिया से अवगत कराया जाएगा।"
+
+  GRIEVANCE_REVIEW:
+    id: "GRIEVANCE_REVIEW"
+    en: "Pursuant to the Ministry of Home Affairs (MHA) Cyber Crime SOP and High Court directives: (a) the bank shall upload customer grievances within 7 days of receipt, (b) the Investigating Officer shall decide upon any grievance within {REVIEW_DAYS} days of receipt, and (c) if a grievance remains unadjudicated beyond {MAX_DAYS} days, the bank may release the hold upon giving 15 days prior written notice to this agency."
+    hi: "गृह मंत्रालय (MHA) साइबर अपराध एसओपी एवं उच्च न्यायालय के निर्देशों के अनुसार: (क) बैंक ग्राहक शिकायत प्राप्ति के 7 दिनों के भीतर पोर्टल पर दर्ज करेगा, (ख) जांच अधिकारी प्राप्ति के {REVIEW_DAYS} दिनों के भीतर निर्णय लेगा, तथा (ग) यदि शिकायत {MAX_DAYS} दिनों तक अनसुलझी रहती है, तो बैंक इस एजेंसी को 15 दिन का पूर्व लिखित नोटिस देकर होल्ड समाप्त कर सकता है।"
+
+  SEC_107_MAGISTRATE_APPLICATION:
+    id: "SEC_107_MAGISTRATE_APPLICATION"
+    en: "Take notice that an application for formal attachment of the traced proceeds of crime is being initiated before the competent Court of the Judicial Magistrate under Section 107 BNSS. Pending adjudication, the bank is requested to safeguard the earmarked sum."
+    hi: "यह भी सूचित किया जाता है कि अपराध की आय (Proceeds of Crime) के वैधानिक कुर्की (Attachment) हेतु सक्षम न्यायिक मजिस्ट्रेट की अदालत में धारा 107 BNSS के तहत आवेदन प्रस्तुत किया जा रहा है। न्यायिक निर्णय लंबित रहने तक बैंक उक्त विवादित राशि को सुरक्षित रखेगा।"
+
+  MAGISTRATE_APPROVAL_SUBMISSION:
+    id: "MAGISTRATE_APPROVAL_SUBMISSION"
+    en: "The disputed amount has been earmarked as material evidence for cyber forensics, and formal judicial confirmation under Section 107 BNSS is submitted before the designated Magistrate."
+    hi: "विवादित राशि को डिजिटल साक्ष्य के रूप में चिन्हित किया गया है, तथा धारा 107 BNSS के अंतर्गत औपचारिक न्यायिक पुष्टिकरण संबंधित मजिस्ट्रेट के समक्ष प्रस्तुत किया गया है।"
+
+  IMMEDIATE_DEBIT_FREEZE_106:
+    id: "IMMEDIATE_DEBIT_FREEZE_106"
+    en: "Exercise statutory powers under Section 106 BNSS to place an immediate debit freeze strictly limited to the tainted sum of {AMT} identified as suspected proceeds of cyber offense, subject to immediate reporting to the Magistrate."
+    hi: "धारा 106 BNSS के तहत वैधानिक शक्तियों का प्रयोग करते हुए, साइबर अपराध की संदिग्ध आय के रूप में चिन्हित ₹{AMT} की राशि पर तत्काल डेबिट फ्रीज लगाया जाए, जिसकी सूचना तत्काल मजिस्ट्रेट को दी जाएगी।"
+
+  PRESERVATION_KYC:
+    id: "PRESERVATION_KYC"
+    en: "Preserve all electronic audit logs, IP access timestamps, UPI device VPA mappings, and account opening documents in secure digital custody under Section 63 BSA for judicial production."
+    hi: "न्यायिक प्रस्तुति हेतु धारा 63 BSA के अंतर्गत सभी इलेक्ट्रॉनिक ऑडिट लॉग, आईपी एक्सेस टाइमस्टैम्प, यूपीआई डिवाइस वीपीए मैपिंग एवं खाता खोलने के दस्तावेजों को सुरक्षित डिजिटल अभिरक्षा में संरक्षित रखें।"
+
+  ELECTRONIC_EVIDENCE_CERT:
+    id: "ELECTRONIC_EVIDENCE_CERT"
+    en: "This requisition is cryptographically hashed with SHA-256 and certified as authentic computer-generated forensic evidence pursuant to Section 63 of Bharatiya Sakshya Adhiniyam, 2023 (BSA)."
+    hi: "यह मांग-पत्र SHA-256 क्रिप्टोग्राफ़िक हैश से प्रमाणित है तथा भारतीय साक्ष्य अधिनियम (BSA), 2023 की धारा 63 के तहत पूर्णतः वैध एवं न्यायालय-स्वीकार्य कंप्यूटर जनित साक्ष्य है।"
+
+# ------------------------------------------------------------------------------
+# WATCH LIST (Must be reviewed by Legal Cell before operational dispatch)
+# ------------------------------------------------------------------------------
+watch_list:
+  - "Confirm whether a lien under s.106 BNSS suffices or a Magistrate order under s.107 BNSS is required in target High Court jurisdiction"
+  - "Verify compliance with MHA SOP dated 10 April 2026: 7-day bank upload, 15-day IO decision, 90-day grievance expiry"
+  - "Ensure no blanket whole-account debit-freeze is ordered without explicit written judicial authorization"
+  - "Confirm mandatory intimation is delivered to the Jurisdictional Judicial Magistrate forthwith"

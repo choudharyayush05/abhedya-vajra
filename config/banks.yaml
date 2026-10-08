@@ -1,0 +1,56 @@
+# Indian Bank IFSC prefix mapping and nodal officer profiles
+# Used for bank grouping, entity disambiguation, and Freeze Notice generation
+
+banks:
+  SBIN:
+    name: "State Bank of India"
+    nodal_email: "nodal.cyber@sbi.co.in"
+    nodal_desk: "Cyber Crime Cell Liaison Desk, State Bank of India, Corporate Centre, Mumbai"
+  HDFC:
+    name: "HDFC Bank"
+    nodal_email: "nodal.officer@hdfcbank.com"
+    nodal_desk: "Fraud Risk Management Unit, HDFC Bank Cards & Digital, Mumbai"
+  ICIC:
+    name: "ICICI Bank"
+    nodal_email: "headservicequality@icicibank.com"
+    nodal_desk: "Cyber Security & Fraud Investigation Unit, ICICI Bank Towers, Mumbai"
+  KKBK:
+    name: "Kotak Mahindra Bank"
+    nodal_email: "nodal.cyber@kotak.com"
+    nodal_desk: "Fraud Containment Cell, Kotak Mahindra Bank, BKC Mumbai"
+  UTIB:
+    name: "Axis Bank"
+    nodal_email: "nodal.cybercell@axisbank.com"
+    nodal_desk: "Central Investigation Unit (CIU), Axis Bank Ltd., Mumbai"
+  PUNB:
+    name: "Punjab National Bank"
+    nodal_email: "cybercrime@pnb.co.in"
+    nodal_desk: "Cyber Security & Prevention Cell, Punjab National Bank HO, New Delhi"
+  BARB:
+    name: "Bank of Baroda"
+    nodal_email: "nodal.cyber@bankofbaroda.com"
+    nodal_desk: "Fraud Monitoring & Investigation Dept, Bank of Baroda, Vadodara/Mumbai"
+  CNRB:
+    name: "Canara Bank"
+    nodal_email: "cybernodal@canarabank.com"
+    nodal_desk: "Information Security Management Desk, Canara Bank HO, Bengaluru"
+  UBIN:
+    name: "Union Bank of India"
+    nodal_email: "cybercrime@unionbankofindia.bank"
+    nodal_desk: "Fraud Investigation & Risk Control Unit, Union Bank Bhavan, Mumbai"
+  AIRP:
+    name: "Airtel Payments Bank"
+    nodal_email: "nodal.payments@airtelbank.com"
+    nodal_desk: "Law Enforcement Liaison Desk, Airtel Payments Bank Ltd, Gurugram"
+  PYTM:
+    name: "Paytm Payments Bank"
+    nodal_email: "cyber.compliance@paytmbank.com"
+    nodal_desk: "Fraud Control & Regulatory Liaison, Paytm Payments Bank, Noida"
+  IDIB:
+    name: "Indian Bank"
+    nodal_email: "nodal.cyber@indianbank.co.in"
+    nodal_desk: "Cyber Fraud Investigation Cell, Indian Bank Corporate Office, Chennai"
+  INDB:
+    name: "IndusInd Bank"
+    nodal_email: "nodal.cyber@indusind.com"
+    nodal_desk: "Fraud Risk Management, IndusInd Bank Ltd., Mumbai"
