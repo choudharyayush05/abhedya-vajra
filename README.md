@@ -10,7 +10,12 @@
 
 > **Documentation & Briefings:**  
 > - For a fast 2-page executive summary & approach brief, read [**PROJECT_BRIEF.md**](PROJECT_BRIEF.md).  
-> - For the complete, mathematically rigorous, deep-dive architectural manifesto, read [**DOCUMENTATION.md**](DOCUMENTATION.md).
+> - For the complete, mathematically rigorous, deep-dive architectural manifesto, read [**DOCUMENTATION.md**](DOCUMENTATION.md).  
+>  
+> 🌐 **Localhost Workbench Access:**  
+> - **Web Interface & Dashboard**: [http://127.0.0.1:8000/](http://127.0.0.1:8000/) *(or [http://localhost:8000/](http://localhost:8000/))*  
+> - **Interactive API Docs (Swagger)**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
+> - **Engine Health & Telemetry**: [http://127.0.0.1:8000/api/health](http://127.0.0.1:8000/api/health)  
 
 ---
 
@@ -180,19 +185,30 @@ See [`synthetic_data/README.md`](synthetic_data/README.md) for full scenario doc
 ### 1-Command Startup
 ```bash
 # Clone the repository
-git clone https://github.com/Void-Hacks-8-0-2/paradox.git
-cd paradox
+git clone https://github.com/choudharyayush05/abhedya-vajra.git
+cd abhedya-vajra
 
-# Launch the full air-gapped workbench
+# Windows (PowerShell)
+.\run.ps1
+
+# Windows (Command Prompt)
+run.bat
+
+# Linux / macOS
 ./run.sh
 ```
-The workbench will launch at **`http://127.0.0.1:8000`**.
+
+The workbench automatically starts and opens at:
+- 🌐 **Localhost UI**: [http://127.0.0.1:8000/](http://127.0.0.1:8000/) *(or [http://localhost:8000/](http://localhost:8000/))*
+- 📑 **Interactive API Documentation (Swagger)**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- 🩺 **Engine Health & Telemetry**: [http://127.0.0.1:8000/api/health](http://127.0.0.1:8000/api/health)
 
 ### Manual Setup
 ```bash
 # 1. Python virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
+python -m venv .venv
+# On Windows: .venv\Scripts\activate
+# On Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
 
 # 2. Build frontend assets
