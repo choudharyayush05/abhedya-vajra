@@ -32,3 +32,6 @@ Thumbs.db
 # Logs and outputs
 *.log
 outputs/*.zip
+
+# Large research papers exceeding upload timeouts
+research_papers/Deep_Learning_Approaches_for_AML_Mobile_Transactions.pdf
